@@ -1,64 +1,89 @@
 <!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <title>demado official</title>
-        <link rel="shortcut icon" href="https://erurami.github.io/icon.png" />
-    </head>
-    <body>
-        <div id="main-text-div1">
-            <p id="normal-text">welcome to demado official site</p>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="common/ress.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="https://erurami.github.io/icon.png">
+    <title>demado Official</title>
+</head>
+<body>
+    <!-- header -->
+        <header class="header header-blur" id="header">
+            <div class="container">
+            <h1 class="header-logo">
+                <a href="https://demado.github.io/">demado</a>
+            </h1>
+            <nav class="gnav">
+                <ul class="gnav-list" id="gnav-list">
+                    <li class="gnav-item">
+                        <a href="https://demado.github.io/">HOME</a>
+                    </li>
+                    <li class="gnav-item">
+                        <a href="https://demado.github.io/downloads/">DOWNLOADS</a>
+                    </li>
+                    <li class="gnav-item">
+                        <a href="https://demado.github.io/#credit">CREDIT</a>
+                    </li>
+                </ul>
+            </nav>
+            </div>
+        </header>
+    <!-- / header -->
+
+    <!-- mv -->
+        <div class="mv">
+            <div class="mv_container">
+                <p class="mv_title">Welcome to demado official site</p>
+            </div>
         </div>
-    </body>
+    <!-- / mv -->
+
+    <!-- description -->
+        <section class="description">
+            <div class="container">
+                <h2 class="title">demadoとは</h2>
+                <p>Windowsでコンピューターの世界が広がります．Windowsでコンピューターの世界が広がります．Windowsでコンピューターの世界が広がります．Windowsでコンピューターの世界が広がります．</p>
+            </div>
+        </section>
+    <!-- / description -->
+    
+    <!-- downloads -->
+        <section class="downloads">
+            <div class="container">
+                <h2 class="title">ダウンロード</h2>
+                <div class="DLpANDbtn">
+                    <p class="DLp">demadoの最新バージョンを今すぐ入手しよう</p>
+                    <a href="" class="DLbtn">ダウンロード</a>
+                </div>
+                <p>他のバージョンをダウンロードするには<a href="downloads">こちら</a>をクリック</p>
+                <style>
+
+                </style>
+            </div>
+        </section>
+    <!-- / downloads -->
+
+    <!-- credit -->
+        <section class="credit">
+            <div class="container">
+                <h2 class="title">クレジット</h2>
+                <div class="profile">
+                    <p class="profile-img">
+                        <img src="img/erurami1234.png" />
+                    </p>
+                    <div class="profile-body">
+                        <h2>えるらみ</h2>
+                        <p>
+                            <br>
+                            パソコンとか好き<br>
+                            python | c | processing | blender | aviutl<br>
+                            それぞれチョットずつできるこうこういちねんせい（オトコノコ）<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- / credit -->
+</body>
 </html>
-
-<style>
-
-    ::-webkit-scrollbar {
-        width: 15px;
-        height: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: #9ca0a7;
-        position: absolute;
-        left: 0px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: #494d55;
-    }
-
-    body {
-        width: 100vw;
-        overflow-x: hidden;
-        background: #c8c8fc;
-    }
-
-    #main-text-div1 {
-        background: #c8c8fc;
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        top: 0px;
-        left: 0px;
-        margin: auto auto;
-    }
-
-    #main-text-div2 {
-        position: absolute;
-        top: 300px;
-        left: 0px;
-        right: 0px;
-        bottom: 0px;
-        margin: auto;
-    }
-
-    #normal-text {
-        font-size: 30px;
-        text-align: center;
-        margin: auto auto;
-    }
-
-</style>
-

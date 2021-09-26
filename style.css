@@ -1,0 +1,232 @@
+@import url(https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap);
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+body {
+  font-family: 'Roboto', 'Noto Sans JP', 'Noto Sans SC', 'sans-serif';
+  font-size: 20px;
+  letter-spacing: .05em;
+  color: #333;
+  background-color: #CACAFF;
+}
+
+a {
+  transition: opacity .3s;
+  text-decoration: none;
+  color: #1ca9e3;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+  border-style: none;
+}
+
+/*--------------------------------
+ ヘッダー
+---------------------------------*/
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+}
+
+.header-blur {
+  /* background:rgba(247, 247, 247, 0.5); */
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+  
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+  
+.header-logo {
+  font-weight: bold;
+  line-height: 1.2;
+  margin-right: 20px;
+  letter-spacing: .05em;
+}
+  
+.header-logo a {
+  font-size: 30px;
+  color: #333;
+}
+  
+.gnav-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+  
+.gnav-item:not(:last-child) {
+  margin-right: 20px;
+}
+  
+.gnav-item p, .gnav-item a {
+  position: relative;
+  font-size: 18px;
+  display: inline-block;
+  padding: 5px 5px;
+  transition: .3s;
+  letter-spacing: .05em;
+  color: #333;
+}
+.gnav-item a:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  content: "";
+  transition: .3s;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #333;
+}
+  
+.gnav-item a:hover:after {
+  width: 100%;
+}
+
+/*--------------------------------
+ メインビジュアル
+---------------------------------*/
+.mv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 85vh;
+}
+
+.mv_container {
+  padding: 0 40px;
+}
+
+.mv_title {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+/*--------------------------------
+ レイアウト
+---------------------------------*/
+section {
+  
+  padding: 50px 0;
+}
+
+.container {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/*--------------------------------
+ 見出し
+---------------------------------*/
+.title {
+  font-size: 34px;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 40px;
+  text-align: center;
+  letter-spacing: .05em;
+  color: #333;
+}
+
+/*--------------------------------
+ 説明
+---------------------------------*/
+.description p {
+  text-align: center;
+}
+
+/*--------------------------------
+ downloads
+---------------------------------*/
+.DLpANDbtn {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.DLp,.DLbtn {
+  display: inline-block;
+}
+
+.DLp {
+  padding-right: 20px;
+}
+
+.DLbtn {
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+
+  color: #fff;
+  background-color: #13B6FB;
+  border-bottom: 5px solid #04A6EC;
+}
+
+.DLbtn:hover {
+  margin-top: 3px;
+  color: #fff;
+  background: #45C5FC;
+  border-bottom: 2px solid #08AEF6;
+}
+
+.downloads p {
+  text-align: center;
+}
+
+/*--------------------------------
+ credit
+---------------------------------*/
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.profile-img {
+  width: 20%;
+  margin-right: 30px;
+  border-radius: 50%;
+}
+.profile-img img {
+  border-radius: 50%;
+}
+.profile-body {
+  flex: 1;
+}
+
+.profile-body p {
+  /* font-size: 15px; */
+  line-height: 1.8;
+}
+
+.profile-body p:not(:last-child) {
+  margin-bottom: 30px;
+}
