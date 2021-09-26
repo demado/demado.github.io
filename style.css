@@ -101,7 +101,7 @@ img {
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 85vh;
+  height: 100vh;
 }
 
 .mv_container {
@@ -112,7 +112,7 @@ img {
   font-size: 40px;
   font-weight: bold;
   line-height: 1.2;
-  margin-bottom: 5px;
+  margin-bottom: 30px;
 }
 
 /*--------------------------------
