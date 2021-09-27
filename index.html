@@ -205,7 +205,7 @@
             this.Animation1Tick = function ()
             {
                 this.animation_progress += 1;
-                window.scrollTo(0, this.scroll_to * ease_progress(this.animation_progress / this.ANIMATION_TOTAL_TIME));
+                window.scrollTo(0, this.scroll_to * ease_progress(this.animation_progress / this.ANIMATION_TOTAL_TIME, 3));
                 if (this.animation_progress > this.ANIMATION_TOTAL_TIME)
                 {
                     this.finish_animation();
