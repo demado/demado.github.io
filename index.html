@@ -45,6 +45,24 @@
         <section class="description">
             <div class="container">
                 <h2 class="title">demadoとは</h2>
+                <p id="demado_description">Windowsでコンピューターの世界が広がります．Windowsでコンピューターの世界が広がります．Windowsでコンピューターの世界が広がります．Windowsでコンピューターの世界が広がります．</p>
+            </div>
+        </section>
+        <section class="description">
+            <div class="container">
+                <h2 class="title">demadoとは</h2>
+                <p>Windowsでコンピューターの世界が広がります．Windowsでコンピューターの世界が広がります．Windowsでコンピューターの世界が広がります．Windowsでコンピューターの世界が広がります．</p>
+            </div>
+        </section>
+        <section class="description">
+            <div class="container">
+                <h2 class="title">demadoとは</h2>
+                <p>Windowsでコンピューターの世界が広がります．Windowsでコンピューターの世界が広がります．Windowsでコンピューターの世界が広がります．Windowsでコンピューターの世界が広がります．</p>
+            </div>
+        </section>
+        <section class="description">
+            <div class="container">
+                <h2 class="title">demadoとは</h2>
                 <p>Windowsでコンピューターの世界が広がります．Windowsでコンピューターの世界が広がります．Windowsでコンピューターの世界が広がります．Windowsでコンピューターの世界が広がります．</p>
             </div>
         </section>
@@ -86,5 +104,178 @@
             </div>
         </section>
     <!-- / credit -->
+
+    <script>
+        window.scroll({top: 0, behavior: 'smooth'});
+        function ease_progress(base_progress, ease_type)
+        {
+            var eased_progress;
+
+            switch (ease_type)
+            {
+                case 0:
+                    eased_progress = base_progress;
+                    break;
+                case 1:
+                    eased_progress = 1 - Math.pow(1 - base_progress, 3);
+                    break;
+                case 2:
+                    eased_progress = 1 - Math.pow(1 - base_progress, 5);
+                    break;
+                case 3:
+                    base_progress *= 0.8;
+                    eased_progress = 1 - Math.pow(1 - base_progress, 5);
+                    break;
+                default:
+                    eased_progress = base_progress;
+                    break;
+            }
+
+            if (base_progress < 0)
+            {
+                eased_progress = 0;
+            }
+
+            if (base_progress > 1)
+            {
+                eased_progress = 1;
+            }
+
+            return eased_progress;
+        }
+
+        var want_scroll_animation = false;
+
+        var animation_1 = function (instance_name)
+        {
+            this.instance_name = instance_name;
+
+            this.mv_title = document.getElementsByClassName("mv_container")[0];
+            this.mv_title.style.position = "fixed";
+            this.start_y_position = this.mv_title.getBoundingClientRect().top - 100;
+            this.start_opacity = 0;
+
+            this.now_y_position = this.mv_title.getBoundingClientRect().top - 100;
+            this.now_opacity = 0;
+
+            this.animation_progress = 0;
+            this.ANIMATION_TOTAL_TIME = 100;
+
+            console.log("initialized");
+
+            this.Animation1Tick = function ()
+            {
+                this.animation_progress += 1;
+                this.now_opacity = ease_progress(this.animation_progress / this.ANIMATION_TOTAL_TIME, 3);
+                this.now_y_position = ease_progress(this.animation_progress / this.ANIMATION_TOTAL_TIME, 3) * 100 + this.start_y_position;
+                this.mv_title.style.top = this.now_y_position + "px";
+                this.mv_title.style.opacity = this.now_opacity;
+                if (this.animation_progress > this.ANIMATION_TOTAL_TIME)
+                {
+                    this.finish_animation();
+                }
+            }
+
+            this.finish_animation = function ()
+            {
+                this.mv_title.style.opacity = 1;
+                clearInterval(this.animation_timer);
+            }
+
+            this.animation_timer = setInterval(this.instance_name + ".Animation1Tick()", 10);
+        }
+
+        var animation_2 = function (instance_name)
+        {
+            this.instance_name = instance_name;
+
+            want_scroll_animation = true;
+
+            var demado_description_rect = document.getElementById("demado_description").getBoundingClientRect();
+            this.scroll_to = demado_description_rect.top - document.documentElement.clientHeight;
+            this.start_y_scroll = 0;
+
+            this.now_y_position = this.start_y_scroll;
+
+            this.animation_progress = 0;
+            this.ANIMATION_TOTAL_TIME = 100;
+
+            console.log("initialized");
+
+            this.Animation1Tick = function ()
+            {
+                this.animation_progress += 1;
+                window.scrollTo(0, this.scroll_to * ease_progress(this.animation_progress / this.ANIMATION_TOTAL_TIME));
+                if (this.animation_progress > this.ANIMATION_TOTAL_TIME)
+                {
+                    this.finish_animation();
+                }
+            }
+
+            this.finish_animation = function ()
+            {
+                clearInterval(this.animation_timer);
+            }
+
+            this.animation_timer = setInterval(this.instance_name + ".Animation1Tick()", 10);
+        }
+
+        var animationManager = function (instance_name)
+        {
+            document.body.style.overflowY = "hidden";
+            this.instance_name = instance_name;
+
+            this.animation_progress = 0;
+            this.ANIMATION_TOTAL_TIME = 200;
+
+            this.animationManagement = function ()
+            {
+                switch (this.animation_progress)
+                {
+                    case 1:
+                        this.animation_1_ins = new animation_1(this.instance_name + ".animation_1_ins");
+                        break;
+                    case 100:
+                        this.animation_2_ins = new animation_2(this.instance_name + ".animation_2_ins");
+                        break;
+                    case this.ANIMATION_TOTAL_TIME:
+                        this.finish_animation();
+                        break;
+                }
+                this.animation_progress += 1;
+            }
+
+            this.finish_animation = function ()
+            {
+                clearInterval(this.animation_timer);
+                want_scroll_animation = true;
+                document.body.style.overflowY = "scroll";
+            }
+
+            this.animation_timer = setInterval(this.instance_name + ".animationManagement()", 10);
+        }
+
+        animation_manager = new animationManager("animation_manager");
+
+
+        var mv_title = document.getElementsByClassName("mv_container")[0];
+        var mv_height = mv_title.clientHeight;
+        var last_yOffset = window.pageYOffset;
+
+        function always_running ()
+        {
+            if (want_scroll_animation == true)
+            {
+                if (last_yOffset != window.pageYOffset)
+                {
+                    mv_title.style.top = Math.floor(document.documentElement.clientHeight / 2  - mv_height / 2 - window.pageYOffset / 2) + "px";
+                }
+            }
+            last_yOffset = window.pageYOffset;
+        }
+
+        setInterval("always_running()", 10);
+
+    </script>
 </body>
 </html>

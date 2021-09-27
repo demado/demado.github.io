@@ -105,6 +105,7 @@ img {
 }
 
 .mv_container {
+  position: fixed;
   padding: 0 40px;
 }
 
